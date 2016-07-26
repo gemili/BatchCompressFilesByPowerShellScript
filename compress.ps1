@@ -1,7 +1,3 @@
-<#   
-This script compress all .bak files {sql backups} in there cureent folder and make new .7zip file. 
-#> 
-
 $ScriptDir = Split-Path $script:MyInvocation.MyCommand.Path
 Write-Host "Current script directory is $ScriptDir"
 
@@ -9,6 +5,8 @@ Get-Content "$ScriptDir\config.ini" | foreach-object -begin {$h=@{}} -process { 
 $BakFileDir = $h.DirToProcess
 $extention = $h.ext
 $password = $h.pwd
+$type = $h.type
+
 Write-Host "Current bak directory is $BakFileDir"
 
 if (-not (test-path "$ScriptDir\7-Zip\7za.exe")) {throw "7za.exe needed"} 
@@ -22,8 +20,8 @@ foreach ($file in $baks) {
                     $name = $file.name 
                     $directory = $file.DirectoryName
 		    Write-Host "Current file is $directory\$name"
-                    $zipfile = $name.Replace(".$extention",".zip") 
-                    compress a -tzip -p$password "$directory\$zipfile" "$directory\$name" 
+                    $zipfile = $name.Replace(".$extention",".$type") 
+                    compress a -t$type -p$password "$directory\$zipfile" "$directory\$name" 
 		    Remove-Item $directory\$name
                 } 
  

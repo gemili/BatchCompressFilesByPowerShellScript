@@ -1,1 +1,1 @@
-powershell -noexit "& ""%~dp0ZipBakFile.ps1"""
+powershell -noexit "& ""%~dp0compress.ps1"""
