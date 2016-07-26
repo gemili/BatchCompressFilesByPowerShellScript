@@ -1,12 +1,13 @@
-# configureation
-Edite ZipBakFile.ps1 using text editor, change the value of $BakFileDir where the files to be compressed
+# configuration
+Edit config.ini file using text editor,  set the the values :
+* DirToProcess : directory to look up files in
+* ext : only deal with the files with specific extention
+* type : the compress type, like 7z, zip, rar
+* pwd : the password for extracting the compressed files
 
 # How to use
-* Launch PowerShell
-* Navigate to the directory where the script lives
-<pre><code>PS> cd C:\my_path\yada_yada\ (enter)</code></pre>
-* Execute the script:
-<pre><code>PS> .\ZipBakFile.ps1 (enter)</code></pre>
+Double click the batch file "run.bat"
 
-Or: you can run the PowerShell script from cmd.exe like this:
-<pre><code>PS> powershell -noexit "& ""C:\my_path\yada_yada\ZipBakFile.ps1""" (enter) </code></pre>
+# Not implemented yet: 
+* recusive of sub directories
+* multi extentions support
