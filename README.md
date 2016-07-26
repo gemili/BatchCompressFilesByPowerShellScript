@@ -1,5 +1,5 @@
 # configuration
-Edit config.ini file using text editor,  set the the values :
+Edit config.ini file using text editor,  set the the following values :
 * DirToProcess : directory to look up files in
 * ext : only deal with the files with specific extention
 * type : the compress type, like 7z, zip, rar
